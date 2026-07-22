@@ -85,6 +85,21 @@ html {
   }
 }
 
+@keyframes heroBackgroundZoom {
+  0% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1.16);
+  }
+}
+
+.animate-hero-background-zoom {
+  animation: heroBackgroundZoom 10s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+
 .animate-slip-up,
 .animate-slip-left,
 .animate-slip-right,
@@ -159,6 +174,11 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .animate-hero-background-zoom {
+    animation: none;
+    transform: scale(1);
+  }
+
   .animate-slip-up,
   .animate-slip-left,
   .animate-slip-right,

@@ -1,78 +1,98 @@
+import Link from "next/link";
 import PageNavbar from "../../components/PageNavbar";
 
 const policySections = [
   {
-    title: "Information We Collect",
-    text: "We may collect your name, phone number, email address, treatment interest, and appointment details when you contact Hair O Graft through our website or forms.",
+    number: "01",
+    title: "Information we collect",
+    text: "When you enquire or book an appointment, we may collect your name, phone number, email address, preferred appointment time, dental concern, and any information you voluntarily share with our clinic team.",
   },
   {
-    title: "How We Use Your Information",
-    text: "Your details are used to respond to enquiries, schedule consultations, share treatment information, improve our services, and provide patient support.",
+    number: "02",
+    title: "Dental and health information",
+    text: "During clinical care, Alpha Dental Studio may maintain consultation notes, medical and dental history, prescriptions, diagnostic images, treatment plans, consent records, invoices, and progress photographs where relevant to your care.",
   },
   {
-    title: "Data Protection",
-    text: "We take reasonable care to protect your personal information from unauthorized access, misuse, loss, or disclosure.",
+    number: "03",
+    title: "How we use information",
+    text: "We use your information to respond to enquiries, schedule and remind you about appointments, provide dental care, coordinate with the appropriate specialist, prepare treatment plans, process payments, and improve patient service.",
   },
   {
-    title: "Sharing Information",
-    text: "We do not sell your personal information. We may share details only with trusted service providers or when required by law.",
+    number: "04",
+    title: "Calls, WhatsApp and email",
+    text: "If you contact us or submit a form, our team may respond by phone, WhatsApp, SMS, or email regarding your enquiry, appointment, treatment follow-up, or clinic-related updates. You may ask us to stop non-essential messages at any time.",
   },
   {
-    title: "Your Choices",
-    text: "You can request correction or removal of your personal information by contacting our clinic team.",
+    number: "05",
+    title: "Sharing and specialist care",
+    text: "We do not sell personal information. Information may be shared only with authorised Alpha Dental team members, consultant specialists involved in your care, essential service providers under confidentiality obligations, or authorities when required by law.",
   },
   {
-    title: "Policy Updates",
-    text: "This Privacy Policy may be updated from time to time. Any changes will be reflected on this page.",
+    number: "06",
+    title: "Security and retention",
+    text: "We use reasonable administrative and technical safeguards to protect patient information. Records are retained only for as long as necessary for clinical, legal, accounting, and patient-support purposes, then securely deleted or disposed of where appropriate.",
+  },
+  {
+    number: "07",
+    title: "Website data and cookies",
+    text: "Our website may use essential cookies and basic analytics information such as browser type, device type, referring page, and pages visited. This helps us maintain performance and understand how visitors use the website.",
+  },
+  {
+    number: "08",
+    title: "Your choices and rights",
+    text: "You may ask to review or correct personal information held by us, withdraw optional communication consent, or request deletion where it does not conflict with clinical record-keeping or legal requirements. We may verify your identity before acting on a request.",
   },
 ];
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#070b16] px-5 py-10 text-white sm:px-8 lg:px-10">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_14%_18%,rgb(53_79_159_/_34%),transparent_30%),radial-gradient(circle_at_88%_12%,rgb(241_50_61_/_20%),transparent_24%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_16px)]" />
+    <main className="min-h-screen bg-[#fbf7f4] text-brand-ink">
+      <PageNavbar />
 
-      <div className="relative z-10 mx-auto max-w-[980px]">
-        <PageNavbar />
-
-        <section className="py-12 sm:py-16">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#7dd9ff]">
-            <span className="h-2 w-2 rounded-full bg-[#f6dc24]" />
-            Privacy Policy
-          </span>
-
-          <h1 className="max-w-[760px] text-[34px] font-extrabold leading-tight text-white sm:text-[46px] lg:text-[56px]">
-            Privacy Policy for Hair O Graft
-          </h1>
-
-          <p className="mt-5 max-w-[760px] text-[16px] font-medium leading-8 text-white/72 sm:text-[18px]">
-            At Hair O Graft, we respect your privacy and are committed to
-            protecting the personal information you share with us.
+      <header className="relative isolate overflow-hidden border-b border-brand-rose/20 px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div aria-hidden="true" className="absolute top-[-100px] left-[-80px] -z-10 h-80 w-80 rounded-full bg-brand-rose/20 blur-3xl" />
+        <div aria-hidden="true" className="absolute right-[-80px] bottom-[-130px] -z-10 h-96 w-96 rounded-full bg-brand-sage/15 blur-3xl" />
+        <div className="mx-auto max-w-6xl">
+          <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[.3em] text-brand-rust sm:text-sm">
+            <span className="flex items-center" aria-hidden="true"><i className="w-10 border-t border-brand-rust" /><i className="h-2 w-2 rotate-45 border border-brand-rust" /></span>
+            Patient privacy
+            <span className="flex items-center" aria-hidden="true"><i className="h-2 w-2 rotate-45 border border-brand-rust" /><i className="w-10 border-t border-brand-rust" /></span>
           </p>
-        </section>
+          <h1 className="mt-5 max-w-4xl font-heading text-4xl leading-[1.08] font-bold tracking-[-1.5px] sm:text-5xl lg:text-[64px] lg:tracking-[-2.5px]">
+            Your information deserves the same <span className="text-brand-rust">care as your smile.</span>
+          </h1>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-brand-ink/65 sm:text-lg">
+            This Privacy Policy explains how Alpha Dental Studio, RA Puram collects, uses, protects, and manages personal and dental information shared through our website and clinic.
+          </p>
+          <p className="mt-4 text-sm font-semibold text-brand-sage">Last updated: 22 July 2026</p>
+        </div>
+      </header>
 
-        <section className="grid gap-5 pb-12 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[250px_1fr] lg:px-8 lg:py-16">
+        <aside className="lg:sticky lg:top-32 lg:self-start">
+          <div className="rounded-2xl border border-brand-rose/25 bg-white p-5 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-[.2em] text-brand-rust">Need help?</p>
+            <p className="mt-3 text-sm leading-6 text-brand-ink/60">Contact our RA Puram team with any privacy or patient-record question.</p>
+            <a href="mailto:info@alphadentalstudios.com" className="mt-4 block break-all text-sm font-bold text-brand-rust hover:text-brand-ink">info@alphadentalstudios.com</a>
+            <a href="tel:+919363937900" className="mt-2 block text-sm font-bold text-brand-rust hover:text-brand-ink">+91 936 393 7900</a>
+            <Link href="/" className="mt-5 inline-flex text-sm font-semibold text-brand-sage hover:text-brand-rust">← Back to home</Link>
+          </div>
+        </aside>
+
+        <section className="grid gap-5 sm:grid-cols-2">
           {policySections.map((section) => (
-            <article
-              className="rounded-2xl border border-white/10 bg-white/[0.07] p-6 shadow-[0_18px_45px_rgb(0_0_0_/_12%)]"
-              key={section.title}
-            >
-              <h2 className="text-[20px] font-extrabold text-white">
-                {section.title}
-              </h2>
-              <p className="mt-3 text-[15px] font-medium leading-7 text-white/70">
-                {section.text}
-              </p>
+            <article key={section.number} className="group rounded-2xl border border-brand-rose/20 bg-white p-6 shadow-[0_12px_35px_rgba(58,46,41,.05)] transition hover:-translate-y-1 hover:border-brand-rust/30 hover:shadow-[0_18px_45px_rgba(58,46,41,.09)]">
+              <span className="font-heading text-sm font-extrabold text-brand-rust/45">{section.number}</span>
+              <h2 className="mt-3 font-heading text-xl font-bold group-hover:text-brand-rust">{section.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-brand-ink/62">{section.text}</p>
             </article>
           ))}
         </section>
-
-        <footer className="border-t border-white/10 py-7 text-center text-[14px] font-medium text-white/62">
-          Copyright 2026{" "}
-          <span className="font-extrabold text-white">Hair O Graft.</span> All
-          rights reserved.
-        </footer>
       </div>
+
+      <footer className="border-t border-brand-rose/20 bg-white px-4 py-7 text-center text-sm text-brand-ink/55">
+        © 2026 <strong className="text-brand-ink">Alpha Dental Studio</strong> · RA Puram, Chennai. All rights reserved.
+      </footer>
     </main>
   );
 }

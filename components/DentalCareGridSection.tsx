@@ -1,167 +1,140 @@
-type IconProps = { className?: string };
+"use client";
 
-const TOOTH_PATH =
-  "M12 2c-2.2 0-3.4 1-4.5 1-1.4 0-2.5.9-2.5 3 0 2.4.6 4.7 1.1 7 .4 1.7.7 4.9 2 4.9 1.4 0 1.2-3.7 1.9-5.6.3-.8.7-1.3 1-1.3s.7.5 1 1.3c.7 1.9.5 5.6 1.9 5.6 1.3 0 1.6-3.2 2-4.9.5-2.3 1.1-4.6 1.1-7 0-2.1-1.1-3-2.5-3-1.1 0-2.3-1-4.5-1Z";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
-function CavityIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path d={TOOTH_PATH} fill="currentColor" />
-      <path
-        d="M3.5 15.2 6 14.3l2.5.9v2.3c0 1.9-1.3 2.9-2.5 3.4-1.2-.5-2.5-1.5-2.5-3.4v-2.3Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ImplantDentistryIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path d={TOOTH_PATH} fill="currentColor" />
-      <path
-        d="M10 19.5h4M9.5 21h5"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function CosmeticIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path d={TOOTH_PATH} fill="currentColor" />
-      <path
-        d="M18.5 2c.3 1.6.8 2.1 2.4 2.4-1.6.3-2.1.8-2.4 2.4-.3-1.6-.8-2.1-2.4-2.4 1.6-.3 2.1-.8 2.4-2.4Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
-function ParodontosisIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path d={TOOTH_PATH} fill="currentColor" />
-      <path d="M17 9.5 14.3 13h1.8L14.5 17l3.7-4.5h-1.8L17 9.5Z" fill="currentColor" />
-    </svg>
-  );
-}
-
-function RadiographyIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path d={TOOTH_PATH} fill="currentColor" />
-      <g stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-        <circle cx="18" cy="4.5" r="1.3" fill="none" />
-        <path d="M18 1.6v.9M20.4 3v.9M20.4 6v-.9M18 7.4v-.9M15.6 4.5h.9M20.5 4.5h.9" />
-      </g>
-    </svg>
-  );
-}
-
-function RestorationIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path d={TOOTH_PATH} fill="currentColor" />
-      <circle cx="18.5" cy="17.5" r="3" fill="none" stroke="currentColor" strokeWidth="1.2" />
-      <path d="M18.5 16.1v2.8M17.1 17.5h2.8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function SedationIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M15 3.5 20.5 9M13.6 4.9l1.9-1.9 3.5 3.5-1.9 1.9M6 12.5l5.6-5.6 3.5 3.5L9.5 16" />
-      <path d="M9.5 16 5 20.5M5 20.5 3.5 22M6.7 18.2 4.8 20.1" />
-      <path d="M11.6 6.9l1.5-1.5" />
-    </svg>
-  );
-}
-
-function CrownsIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path
-        d="M7.5 4c.9 0 1.3.5 2.7.5S12.6 4 13.5 4c1.1 0 1.7.9 1.7 2.4 0 2.1-.8 3.9-1.3 5.1-.3.6-.5 1.5-.9 1.5s-.5-1-.7-1.5c-.2-.5-.5-.8-.8-.8s-.6.3-.8.8c-.2.5-.3 1.5-.7 1.5s-.6-.9-.9-1.5C8.6 10.3 7.8 8.5 7.8 6.4 7.8 4.9 8.4 4 7.5 4Z"
-        fill="currentColor"
-      />
-      <path
-        d="M14.5 4c.9 0 1.3.5 2.7.5S19.6 4 20.5 4c1.1 0 1.7.9 1.7 2.4 0 2.1-.8 3.9-1.3 5.1-.3.6-.5 1.5-.9 1.5s-.5-1-.7-1.5c-.2-.5-.5-.8-.8-.8s-.6.3-.8.8c-.2.5-.3 1.5-.7 1.5s-.6-.9-.9-1.5C15.6 10.3 14.8 8.5 14.8 6.4c0-1.5.6-2.4-.3-2.4Z"
-        fill="currentColor"
-        opacity="0.55"
-      />
-    </svg>
-  );
-}
-
-const SERVICES = [
+const TRUST_POINTS = [
   {
-    title: "Cavity Protection",
-    description: "Will help strengthen teeth and leave your mouth feeling fresh.",
-    Icon: CavityIcon,
+    title: "9 specialist dentists",
+    description:
+      "Implantologists, orthodontists, periodontists, cosmetic surgeons .",
+    icon: "/icon-6.png",
   },
   {
-    title: "Implant Dentistry",
-    description: "Dental implants are the closest you can get to healthy, natural teeth.",
-    Icon: ImplantDentistryIcon,
+    title: "Digital smile planning",
+    description: "See your projected results before treatment starts, not after you've paid.",
+    icon: "/icon-7.png",
   },
   {
-    title: "Cosmetic Dentistry",
-    description: "Cosmetic Dentistry improve the appearance of an individual's teeth.",
-    Icon: CosmeticIcon,
+    title: "Transparent pricing",
+    description: "Patients specifically call our rates fairer than other clinics in metro cities.",
+    icon: "/icon-8.png",
   },
   {
-    title: "Parodontosis",
-    description: "Timely treated parodontosis disease can save you from tooth loss.",
-    Icon: ParodontosisIcon,
+    title: "Calm, modern clinic",
+    description: "Patients describe it as premium, hygienic, and genuinely stress-free.",
+    icon: "/icon-9.png",
   },
   {
-    title: "Dental Radiography",
-    description: "Dental X-rays are a useful tool that help to diagnose and plan treatments.",
-    Icon: RadiographyIcon,
+    title: "Led by Dr. S. Zeenath",
+    description: "Managing Director & Chief Dental Surgeon, backed by a full team of MDS consultants.",
+    icon: "/icon-10.png",
   },
   {
-    title: "Tooth Restorations",
-    description: "We can replace missing teeth or repair missing parts of the tooth structure.",
-    Icon: RestorationIcon,
-  },
-  {
-    title: "Sedation Dentistry",
-    description: "We can use medication to help patients relax during dental procedures.",
-    Icon: SedationIcon,
-  },
-  {
-    title: "Crowns & Bridges",
-    description: "We'll design, produce and insert ceramic structure all in one single appointment.",
-    Icon: CrownsIcon,
+    title: "Open 6 days a week",
+    description: "Mon–Sat, 10 AM – 8 PM. Easy to fit around your schedule, not the other way round.",
+    icon: "/icon-11.png",
   },
 ];
 
 export default function DentalCareGridSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setRevealed(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const scroller = mobileScrollRef.current;
+    if (!scroller) return;
+
+    let frame = 0;
+    let previousTime = performance.now();
+    const move = (time: number) => {
+      const elapsed = Math.min(time - previousTime, 40);
+      previousTime = time;
+      scroller.scrollLeft += elapsed * 0.03;
+      const halfway = scroller.scrollWidth / 2;
+      if (halfway > 0 && scroller.scrollLeft >= halfway) scroller.scrollLeft -= halfway;
+      frame = requestAnimationFrame(move);
+    };
+    frame = requestAnimationFrame(move);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   return (
-    <section className="bg-[#f4f7f8] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-        {SERVICES.map((service) => (
-          <div key={service.title} className="group flex flex-col items-center text-center">
+    <section ref={sectionRef} className="overflow-hidden px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className={`mb-2 flex items-center justify-center gap-3 font-sans text-xs font-bold uppercase tracking-[0.3em] text-brand-rust transition-all delay-[350ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:text-sm max-[600px]:gap-2 max-[600px]:tracking-[0.2em] ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
+          <span aria-hidden="true" className="flex items-center">
+            <i className="block w-10 border-t border-brand-rust max-[600px]:w-6" />
+            <i className="block h-2 w-2 rotate-45 border border-brand-rust" />
+          </span>
+          <span>Why RA Puram </span>
+          <span aria-hidden="true" className="flex items-center">
+            <i className="block h-2 w-2 rotate-45 border border-brand-rust" />
+            <i className="block w-10 border-t border-brand-rust max-[600px]:w-6" />
+          </span>
+        </p>
+        <h2 className={`font-heading text-3xl font-bold tracking-[-1.5px] text-brand-ink transition-all delay-700 duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:text-4xl lg:text-[52px] lg:leading-[1.1] lg:tracking-[-2px] ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
+         Nine specialists. One <span className="text-brand-rust">transparent plan. </span>
+        </h2>
+        <p className={`mt-2 text-base text-brand-ink/60 transition-all delay-[1050ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:text-lg ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
+          
+        </p>
+      </div>
+
+      <div className="mx-auto mt-8 flex max-w-7xl flex-wrap justify-center gap-x-10 gap-y-8 max-[600px]:hidden">
+        {TRUST_POINTS.map((point, index) => (
+          <div
+            key={point.title}
+            style={{ transitionDelay: `${1400 + index * 350}ms`, transitionDuration: "1200ms" }}
+            className={`group flex w-full flex-col items-center text-center transition-all ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:w-[calc(50%-20px)] lg:w-[calc(25%-30px)] ${revealed ? "translate-x-0 translate-y-0 opacity-100" : index % 2 === 0 ? "-translate-x-5 translate-y-10 opacity-0" : "translate-x-5 translate-y-10 opacity-0"}`}
+          >
             <span className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-brand-rose to-brand-rust">
-              <span className="pointer-events-none absolute inset-y-0 left-0 w-0 bg-brand-sage transition-all duration-500 ease-out group-hover:w-full" />
-              <service.Icon className="relative z-10 h-9 w-9 text-white" />
+              <span className="pointer-events-none absolute inset-y-0 left-0 w-0 bg-[#c6cfbe] transition-all duration-500 ease-out group-hover:w-full" />
+              <Image
+                src={point.icon}
+                alt=""
+                width={46}
+                height={46}
+                className="relative z-10 h-15 w-15 object-contain brightness-0 invert"
+              />
             </span>
-            <h3 className="mt-6 font-heading text-lg font-bold text-brand-rust">
-              {service.title}
+            <h3 className="mt-6 font-heading text-lg font-bold text-brand-rust transition-colors duration-300 group-hover:text-[#c6cfbe]">
+              {point.title}
             </h3>
-            <p className="mt-2 max-w-[230px] text-sm leading-relaxed text-brand-ink/60">
-              {service.description}
+            <p className="mt-2 max-w-[260px] text-sm leading-relaxed text-brand-ink/60">
+              {point.description}
             </p>
           </div>
         ))}
+      </div>
+
+      <div ref={mobileScrollRef} className={`no-scrollbar -mx-4 mt-8 hidden overflow-x-auto px-4 transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[600px]:block ${revealed ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+        <div className="flex w-max gap-5 pr-5">
+          {[...TRUST_POINTS, ...TRUST_POINTS].map((point, index) => (
+            <article key={`${point.title}-${index}`} aria-hidden={index >= TRUST_POINTS.length} className="group flex w-[78vw] max-w-[300px] shrink-0 flex-col items-center px-3 py-4 text-center">
+              <span className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-brand-rose to-brand-rust">
+                <span className="pointer-events-none absolute inset-y-0 left-0 w-0 bg-[#c6cfbe] transition-all duration-500 ease-out group-hover:w-full" />
+                <Image src={point.icon} alt="" width={46} height={46} className="relative z-10 h-15 w-15 object-contain brightness-0 invert" />
+              </span>
+              <h3 className="mt-6 font-heading text-lg font-bold text-brand-rust transition-colors duration-300 group-hover:text-[#c6cfbe]">{point.title}</h3>
+              <p className="mt-2 max-w-[260px] text-sm leading-relaxed text-brand-ink/60">{point.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

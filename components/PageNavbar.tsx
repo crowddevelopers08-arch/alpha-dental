@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { openConsultationModal } from "./ConsultationModal";
 
 const NAV_LINKS = [
   { href: "/#top", label: "Home" },
@@ -52,12 +53,13 @@ export default function PageNavbar() {
           >
             +91 936 393 7900
           </a>
-          <a
-            href="tel:+919363937900"
+          <button
+            type="button"
+            onClick={() => openConsultationModal("Navbar Consultation CTA")}
             className="inline-flex h-11 items-center justify-center rounded-full bg-brand-rust px-6 text-sm font-bold text-white shadow-lg shadow-brand-rust/25 transition-transform hover:-translate-y-0.5 hover:bg-brand-ink"
           >
             Book Free Consultation
-          </a>
+          </button>
         </div>
 
         <button
@@ -94,12 +96,16 @@ export default function PageNavbar() {
             {link.label}
           </Link>
         ))}
-        <a
-          href="tel:+919363937900"
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(false);
+            openConsultationModal("Mobile Navbar Consultation CTA");
+          }}
           className="mt-2 inline-flex h-11 items-center justify-center rounded-full bg-brand-rust px-6 text-sm font-bold text-white shadow-lg shadow-brand-rust/25"
         >
           Book Free Consultation
-        </a>
+        </button>
       </div>
     </header>
   );

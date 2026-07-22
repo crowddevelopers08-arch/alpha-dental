@@ -1,58 +1,79 @@
 import Link from "next/link";
 import PageNavbar from "../../components/PageNavbar";
 
+const nextSteps = [
+  {
+    number: "01",
+    title: "We review your request",
+    text: "Our RA Puram care coordinator checks your preferred treatment and appointment details.",
+  },
+  {
+    number: "02",
+    title: "We call to confirm",
+    text: "You will receive a call from our team to confirm a convenient consultation time.",
+  },
+  {
+    number: "03",
+    title: "Meet the right specialist",
+    text: "Your consultation is matched with the specialist best suited to your dental concern.",
+  },
+];
+
 export default function ThankYouPage() {
   return (
-    <main className="min-h-screen bg-[#070b16] px-5 py-10 text-white sm:px-8 lg:px-10">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_18%_16%,rgb(53_79_159_/_36%),transparent_30%),radial-gradient(circle_at_82%_20%,rgb(241_50_61_/_20%),transparent_26%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_16px)]" />
+    <main className="min-h-screen overflow-hidden bg-[#fbf7f4] text-brand-ink">
       <PageNavbar />
 
-      <section className="relative z-10 mx-auto flex min-h-[calc(100vh-150px)] max-w-[920px] flex-col items-center justify-center py-12 text-center">
-        <div className="mb-7 flex h-20 w-20 items-center justify-center rounded-full bg-[#354f9f] shadow-[0_18px_45px_rgb(53_79_159_/_35%)]">
-          <svg
-            className="h-10 w-10 text-white"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="m5 12.5 4.3 4.3L19 7"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.7"
-            />
-          </svg>
-        </div>
+      <section className="relative isolate px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div aria-hidden="true" className="absolute top-10 left-[-100px] -z-10 h-72 w-72 rounded-full bg-brand-rose/20 blur-3xl" />
+        <div aria-hidden="true" className="absolute right-[-80px] bottom-0 -z-10 h-80 w-80 rounded-full bg-brand-sage/15 blur-3xl" />
 
-        <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#7dd9ff]">
-          <span className="h-2 w-2 rounded-full bg-[#f6dc24]" />
-          Thank You
-        </span>
+        <div className="mx-auto max-w-5xl">
+          <div className="relative overflow-hidden rounded-[32px] border border-brand-rose/25 bg-white px-6 py-12 text-center shadow-[0_30px_80px_rgba(58,46,41,.10)] sm:px-12 lg:px-20">
+            <span aria-hidden="true" className="absolute top-0 left-1/2 h-1.5 w-28 -translate-x-1/2 rounded-b-full bg-brand-rust" />
 
-        <h1 className="max-w-[760px] text-[34px] font-extrabold leading-tight text-white sm:text-[48px] lg:text-[58px]">
-          Your appointment request has been received.
-        </h1>
+            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-rust text-white shadow-[0_16px_38px_rgba(150,55,32,.25)]">
+              <svg className="h-10 w-10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m5 12.5 4.2 4.2L19 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
 
-        <p className="mt-5 max-w-[650px] text-[16px] font-medium leading-8 text-white/72 sm:text-[18px]">
-          Our Hair O Graft team will contact you soon to confirm your
-          consultation and guide you through the next step of your hair
-          restoration journey.
-        </p>
+            <p className="mt-7 flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-[.28em] text-brand-rust sm:text-sm">
+              <span className="flex items-center" aria-hidden="true"><i className="w-8 border-t border-brand-rust" /><i className="h-2 w-2 rotate-45 border border-brand-rust" /></span>
+              Request received
+              <span className="flex items-center" aria-hidden="true"><i className="h-2 w-2 rotate-45 border border-brand-rust" /><i className="w-8 border-t border-brand-rust" /></span>
+            </p>
 
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-[#f1323d] px-7 text-[15px] font-extrabold text-white transition-colors duration-200 hover:bg-[#354f9f]"
-          >
-            Back To Home
-          </Link>
-          <Link
-            href="/#lead-form"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-white/18 bg-white/10 px-7 text-[15px] font-extrabold text-white transition-colors duration-200 hover:bg-white/18"
-          >
-            Book Again
-          </Link>
+            <h1 className="mx-auto mt-5 max-w-3xl font-heading text-4xl leading-[1.08] font-bold tracking-[-1.5px] sm:text-5xl lg:text-[58px] lg:tracking-[-2px]">
+              Thank you for choosing <span className="text-brand-rust">Alpha Dental Studio.</span>
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-brand-ink/65 sm:text-lg">
+              Your free consultation request has reached our RA Puram team. We&apos;ll contact you shortly to understand your concern and arrange the right specialist consultation.
+            </p>
+
+            <div className="mt-10 grid gap-4 text-left md:grid-cols-3">
+              {nextSteps.map((step) => (
+                <article key={step.number} className="rounded-2xl border border-brand-rose/20 bg-[#fffaf7] p-5">
+                  <span className="font-heading text-sm font-extrabold text-brand-rust/55">{step.number}</span>
+                  <h2 className="mt-3 text-lg font-bold">{step.title}</h2>
+                  <p className="mt-2 text-sm leading-6 text-brand-ink/60">{step.text}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a href="https://wa.me/919363937900?text=Hi%2C%20I%20submitted%20a%20consultation%20request%20for%20Alpha%20Dental%20Studio." className="inline-flex h-13 min-w-[230px] items-center justify-center rounded-full bg-brand-rust px-7 text-sm font-bold text-white shadow-lg shadow-brand-rust/20 transition hover:-translate-y-0.5 hover:bg-brand-ink">
+                Continue on WhatsApp →
+              </a>
+              <a href="tel:+919363937900" className="inline-flex h-13 min-w-[210px] items-center justify-center rounded-full border border-brand-rose/40 bg-white px-7 text-sm font-bold transition hover:-translate-y-0.5 hover:border-brand-rust hover:text-brand-rust">
+                Call +91 936 393 7900
+              </a>
+            </div>
+
+            <Link href="/" className="mt-7 inline-flex text-sm font-semibold text-brand-sage underline-offset-4 hover:text-brand-rust hover:underline">← Return to homepage</Link>
+          </div>
+
+          <p className="mt-6 text-center text-sm text-brand-ink/50">Alpha Dental Studio · RA Puram, Chennai · Mon–Sat, 10 AM–8 PM</p>
         </div>
       </section>
     </main>
