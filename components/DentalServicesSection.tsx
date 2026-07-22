@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { openConsultationModal } from "./ConsultationModal";
 
 const ACCENT_STYLES = [
   { bg: "bg-brand-rose/15" },
@@ -195,6 +196,16 @@ export default function DentalServicesSection() {
             <button key={service.number} type="button" onClick={() => setActiveService(index)} aria-label={`Show ${service.title}`} aria-current={activeService === index ? "true" : undefined} className={`h-1.5 rounded-full transition-all ${activeService === index ? "w-7 bg-brand-rust" : "w-2 bg-brand-rose/40"}`} />
           ))}
         </div>
+      </div>
+
+      <div className={`mt-10 flex justify-center transition-all delay-[3500ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[600px]:mt-8 ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
+        <button
+          type="button"
+          onClick={() => openConsultationModal("Dental Services Consultation CTA")}
+          className="inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-rust/20 transition-colors hover:bg-brand-ink"
+        >
+          Book Your Consultation
+        </button>
       </div>
     </section>
   );

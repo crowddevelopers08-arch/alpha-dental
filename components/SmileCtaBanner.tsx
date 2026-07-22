@@ -80,7 +80,7 @@ export default function SmileCtaBanner() {
           <button
             type="button"
             onClick={() => openConsultationModal("Smile CTA Banner")}
-            className={`mt-8 inline-flex h-14 items-center justify-center rounded-full bg-brand-ink px-8 text-xs font-bold uppercase tracking-wider text-white transition-all delay-[3500ms] duration-[1200ms] ease-out hover:-translate-y-0.5 hover:bg-brand-rust motion-reduce:transform-none motion-reduce:opacity-100 max-[639px]:delay-[1400ms] ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
+            className={`mt-8 inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white transition-all delay-[3500ms] duration-[1200ms] ease-out hover:-translate-y-0.5 hover:bg-brand-rust motion-reduce:transform-none motion-reduce:opacity-100 max-[639px]:delay-[1400ms] ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
           >
             Book My Free Consultation →
           </button>

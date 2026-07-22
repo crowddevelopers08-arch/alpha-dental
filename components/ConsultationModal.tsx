@@ -4,6 +4,16 @@ import { FormEvent, useEffect, useState } from "react";
 
 const MODAL_EVENT = "alpha-open-consultation";
 
+const CONCERNS = [
+  "Full-Mouth Implants",
+  "Smile Designing",
+  "Invisible Aligners",
+  "Tooth Replacement",
+  "Cosmetic Dentistry",
+  "General Dental Consultation",
+  "Other Dental Concern",
+] as const;
+
 export function openConsultationModal(source = "Website Consultation CTA") {
   window.dispatchEvent(new CustomEvent(MODAL_EVENT, { detail: { source } }));
 }
@@ -86,7 +96,7 @@ export default function ConsultationModal() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-ink/70 p-3 backdrop-blur-sm sm:p-6"
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-brand-ink/70 p-3 backdrop-blur-sm [overscroll-behavior:contain] [-webkit-overflow-scrolling:touch] sm:items-center sm:p-6"
       role="presentation"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) setOpen(false);
@@ -96,7 +106,7 @@ export default function ConsultationModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="consultation-title"
-        className="relative max-h-[calc(100vh-24px)] w-full max-w-xl overflow-y-auto rounded-[28px] bg-white shadow-[0_30px_100px_rgba(0,0,0,.35)] sm:max-h-[calc(100vh-48px)]"
+        className="relative my-auto w-full max-w-xl shrink-0 rounded-[28px] bg-white shadow-[0_30px_100px_rgba(0,0,0,.35)] sm:max-h-[calc(100dvh-48px)] sm:overflow-y-auto"
       >
         <button
           type="button"
@@ -136,7 +146,12 @@ export default function ConsultationModal() {
             </label>
             <label className="text-xs font-bold text-brand-ink sm:col-span-2">
               Concern *
-              <textarea name="concern" required rows={3} placeholder="Tell us about your dental concern" className="mt-1.5 w-full resize-none rounded-xl border border-brand-rose/30 bg-[#fffaf7] px-4 py-3 text-sm text-brand-ink outline-none transition placeholder:text-brand-ink/35 focus:border-brand-rust focus:ring-4 focus:ring-brand-rust/10" />
+              <select name="concern" required defaultValue="" className={inputClass}>
+                <option value="" disabled>Select your dental concern</option>
+                {CONCERNS.map((concern) => (
+                  <option key={concern} value={concern}>{concern}</option>
+                ))}
+              </select>
             </label>
           </div>
 
