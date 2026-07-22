@@ -65,10 +65,8 @@ export default function DentalWellnessAbout() {
             />
           </div>
 
-          <div className={`absolute top-[360px] left-[66%] z-[3] h-[165px] w-[225px] rounded-[22px_22px_0_22px] bg-[var(--color-brand-rust)] px-[15px] py-[15px] text-white transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[1250px]:left-[58%] max-[1250px]:w-[245px] max-[900px]:top-[280px] max-[900px]:left-1/2 max-[900px]:h-[168px] max-[900px]:w-[36%] max-[900px]:p-[21px] max-[600px]:top-[235px] max-[600px]:left-[45%] max-[600px]:h-[136px] max-[600px]:w-[49%] max-[600px]:rounded-[17px_17px_0_17px] max-[600px]:p-4 ${revealed ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
-            <span className="mb-[8px] block text-[42px] leading-none font-light max-[900px]:mb-[21px] max-[900px]:text-[34px] max-[600px]:mb-[11px] max-[600px]:text-[26px]" aria-hidden="true">↗</span>
-            <strong className="block font-heading text-[43px] leading-none font-bold tracking-[-1.6px] max-[900px]:text-[34px] max-[600px]:text-[26px] max-[600px]:tracking-[-.8px]">6.5Million</strong>
-            <small className="mt-[5px] block text-[16px] font-medium max-[600px]:mt-[6px] max-[600px]:text-[11px]">Customers Benefits</small>
+          <div className={`absolute top-[360px] left-[66%] z-[3] h-[165px] w-[225px] overflow-hidden rounded-[22px_22px_0_22px] border-[4px] border-white shadow-[0_15px_35px_rgba(0,0,0,.18)] transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[1250px]:left-[58%] max-[1250px]:w-[245px] max-[900px]:top-[280px] max-[900px]:left-1/2 max-[900px]:h-[168px] max-[900px]:w-[36%] max-[600px]:top-[235px] max-[600px]:left-[45%] max-[600px]:h-[136px] max-[600px]:w-[49%] max-[600px]:rounded-[17px_17px_0_17px] max-[600px]:border-[3px] ${revealed ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
+            <Image src="/teeth-image.jpg" alt="Close-up of a healthy, bright smile" fill sizes="(max-width: 600px) 49vw, (max-width: 900px) 36vw, 225px" className="object-cover object-center" />
           </div>
         </div>
 
@@ -123,16 +121,14 @@ export default function DentalWellnessAbout() {
         </div>
 
         <div className="relative -mx-[6.4%] mt-5 max-sm:mt-0 min-h-[405px] overflow-hidden">
-          <div className={`absolute top-[78px] left-[6%] z-[2] h-[300px] w-[48%] overflow-hidden rounded-[15px] transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>
+          <div className={`absolute top-[78px] left-[6%] z-[2] h-[300px] w-[48%] overflow-hidden rounded-[15px] border-[3px] border-white shadow-[0_15px_35px_rgba(0,0,0,.18)] transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>
             <Image src="/avatar-6.jpg" alt="Dental specialist examining a patient" fill sizes="48vw" className="object-cover object-center" />
           </div>
-          <div className={`absolute top-5 left-[49%] z-[1] h-[325px] w-[45%] overflow-hidden rounded-[15px] transition-all delay-[1750ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"}`}>
+          <div className={`absolute top-5 left-[49%] z-[1] h-[325px] w-[45%] overflow-hidden rounded-[15px] border-[3px] border-white shadow-[0_15px_35px_rgba(0,0,0,.18)] transition-all delay-[1750ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"}`}>
             <Image src="/hero/main-treatment.png" alt="Dentist providing professional treatment" fill sizes="45vw" className="object-cover object-center" />
           </div>
-          <div className={`absolute top-[235px] left-[45%] z-[3] h-[136px] w-[49%] rounded-[17px_17px_0_17px] bg-[var(--color-brand-rust)] p-4 text-white transition-all delay-[2100ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
-            <span className="mb-[11px] block text-[26px] leading-none font-light" aria-hidden="true">↗</span>
-            <strong className="block font-heading text-[26px] leading-none font-bold tracking-[-.8px]">6.5Million</strong>
-            <small className="mt-[6px] block text-[11px] font-medium">Customers Benefits</small>
+          <div className={`absolute top-[235px] left-[45%] z-[3] h-[136px] w-[49%] overflow-hidden rounded-[17px_17px_0_17px] border-[3px] border-white shadow-[0_15px_35px_rgba(0,0,0,.18)] transition-all delay-[2100ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
+            <Image src="/teeth-image.jpg" alt="Close-up of a healthy, bright smile" fill sizes="49vw" className="object-cover object-center" />
           </div>
         </div>
 
