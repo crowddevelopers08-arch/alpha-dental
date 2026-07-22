@@ -14,20 +14,17 @@ const CONCERNS = [
   "Other Dental Concern",
 ] as const;
 
-export function openConsultationModal(source = "Website Consultation CTA") {
+export function openConsultationModal(source = "Website") {
   window.dispatchEvent(new CustomEvent(MODAL_EVENT, { detail: { source } }));
 }
 
 export default function ConsultationModal() {
   const [open, setOpen] = useState(false);
-  const [source, setSource] = useState("Website Consultation CTA");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const showModal = (event: Event) => {
-      const detail = (event as CustomEvent<{ source?: string }>).detail;
-      setSource(detail?.source || "Website Consultation CTA");
+    const showModal = () => {
       setError("");
       setOpen(true);
     };
@@ -66,7 +63,7 @@ export default function ConsultationModal() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          source,
+          source: "website-lead",
           name: form.get("name"),
           phone: form.get("phone"),
           email: "",
