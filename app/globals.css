@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+
+  --color-brand-rose: #be9485;
+  --color-brand-rust: #963720;
+  --color-brand-sage: #839873;
+  --color-brand-ink: #3a2e29;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-family: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 112px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slipUpStay {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slipLeftStay {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slipRightStay {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popStay {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slip-up,
+.animate-slip-left,
+.animate-slip-right,
+.animate-pop {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.animate-slip-up {
+  transform: translateY(28px);
+}
+
+.animate-slip-left {
+  transform: translateX(-36px);
+}
+
+.animate-slip-right {
+  transform: translateX(36px);
+}
+
+.animate-pop {
+  transform: scale(0.92);
+}
+
+.animate-slip-up.is-visible,
+.animate-slip-left.is-visible,
+.animate-slip-right.is-visible,
+.animate-pop.is-visible {
+  animation-duration: 720ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-slip-up.is-visible {
+  animation-name: slipUpStay;
+}
+
+.animate-slip-left.is-visible {
+  animation-name: slipLeftStay;
+}
+
+.animate-slip-right.is-visible {
+  animation-name: slipRightStay;
+}
+
+.animate-pop.is-visible {
+  animation-name: popStay;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slip-up,
+  .animate-slip-left,
+  .animate-slip-right,
+  .animate-pop {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
