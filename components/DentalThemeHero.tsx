@@ -89,7 +89,7 @@ function TypewriterText() {
 function TeamPreview() {
   return (
     <div className="relative h-full w-full bg-white">
-      <Image src="/hero/testimonial.png" alt="Dentist consulting a patient" fill sizes="253px" className="!h-[%] object-cover object-[center_37%]" />
+      <Image src="/hero/main-treatment.png" alt="Dentist consulting a patient" fill sizes="253px" className="object-cover object-[center_37%]" />
       <div className="absolute right-0 bottom-0 left-20 h-[20%] bg-white px-[13px] pt-2 pb-[10px]">
         <small className="block text-[5px] tracking-[1px]">MEET DENTISTA</small>
         <b className="my-[5px] block text-[13px]">Professional Team</b>
@@ -122,9 +122,9 @@ function BlogPreview() {
 
 function ArticlesPreview() {
   const articles = [
-    ["woman-avatar.png", "Maintaining good dental care habits"],
-    ["man-avatar.png", "Are permanent retainers right?"],
-    ["main-treatment.png", "Questions to ask your dentist"],
+    ["/hero/woman-avatar.png", "Maintaining good dental care habits"],
+    ["/avatar-6.jpg", "Are permanent retainers right?"],
+    ["/hero/main-treatment.png", "Questions to ask your dentist"],
   ];
 
   return (
@@ -134,7 +134,7 @@ function ArticlesPreview() {
       <div className="grid grid-cols-3 gap-[7px]">
         {articles.map(([src, title]) => (
           <div key={src}>
-            <Image src={`/hero/${src}`} alt="" width={82} height={58} className="h-[58px] w-full object-cover" />
+            <Image src={src} alt="" width={82} height={58} className="h-[58px] w-full object-cover" />
             <strong className="mt-1 block text-[6px] leading-[1.1]">{title}</strong>
           </div>
         ))}
@@ -237,7 +237,7 @@ export default function DentalThemeHero() {
         <ArticlesPreview />
       </div>
       <div className={`absolute top-[386px] right-[156px] h-[178px] w-[177px] overflow-hidden rounded-[75px_75px_45px_45px] transition-all delay-[3500ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[1100px]:right-[6%] max-[760px]:top-auto max-[760px]:right-[15px] max-[760px]:bottom-5 max-[760px]:h-[125px] max-[760px]:w-[125px] max-[600px]:right-[10px] max-[600px]:bottom-0 max-[600px]:h-[160px] max-[600px]:w-[160px] max-[600px]:rounded-[80px_80px_45px_45px] max-[425px]:h-[145px] max-[425px]:w-[145px] max-[375px]:h-[130px] max-[375px]:w-[130px] max-[340px]:h-[115px] max-[340px]:w-[115px] ${revealed ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
-        <Image src="/hero/man-avatar.png" alt="Patient receiving a dental examination" fill sizes="177px" className="object-cover object-[center_52%]" />
+        <Image src="/avatar-6.jpg" alt="Patient receiving a dental examination" fill sizes="177px" className="object-cover object-[center_52%]" />
       </div>
     </section>
   );

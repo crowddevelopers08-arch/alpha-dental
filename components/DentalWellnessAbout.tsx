@@ -47,7 +47,7 @@ export default function DentalWellnessAbout() {
         <div className="relative min-h-[550px] max-[900px]:min-h-[500px] max-[600px]:min-h-[405px]">
           <div className={`absolute top-[108px] left-[9%] z-[2] h-[400px] w-[260px] overflow-hidden rounded-[20px] transition-all delay-700 duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[1250px]:left-[2%] max-[1250px]:w-[245px] max-[900px]:top-[90px] max-[900px]:left-[9%] max-[900px]:h-[375px] max-[900px]:w-[38%] max-[600px]:top-[78px] max-[600px]:left-[6%] max-[600px]:h-[300px] max-[600px]:w-[48%] max-[600px]:rounded-[15px] ${revealed ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>
             <Image
-              src="/hero/man-avatar.png"
+              src="/avatar-6.jpg"
               alt="Dental specialist examining a patient"
               fill
               sizes="(max-width: 600px) 48vw, (max-width: 900px) 38vw, 260px"
@@ -124,7 +124,7 @@ export default function DentalWellnessAbout() {
 
         <div className="relative -mx-[6.4%] mt-5 max-sm:mt-0 min-h-[405px] overflow-hidden">
           <div className={`absolute top-[78px] left-[6%] z-[2] h-[300px] w-[48%] overflow-hidden rounded-[15px] transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>
-            <Image src="/hero/man-avatar.png" alt="Dental specialist examining a patient" fill sizes="48vw" className="object-cover object-center" />
+            <Image src="/avatar-6.jpg" alt="Dental specialist examining a patient" fill sizes="48vw" className="object-cover object-center" />
           </div>
           <div className={`absolute top-5 left-[49%] z-[1] h-[325px] w-[45%] overflow-hidden rounded-[15px] transition-all delay-[1750ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"}`}>
             <Image src="/hero/main-treatment.png" alt="Dentist providing professional treatment" fill sizes="45vw" className="object-cover object-center" />

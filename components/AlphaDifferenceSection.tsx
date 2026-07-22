@@ -23,7 +23,7 @@ export default function AlphaDifferenceSection() {
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-brand-ink px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
       <Image
-        src="/hero/testimonial.png"
+        src="/hero/main-treatment.png"
         alt=""
         fill
         aria-hidden="true"
