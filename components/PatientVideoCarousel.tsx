@@ -78,7 +78,7 @@ export default function PatientVideoCarousel() {
           <div className="mx-auto max-w-4xl text-center">
             <p className={`flex items-center justify-center gap-3 text-xs font-bold tracking-[3px] text-brand-rust uppercase transition-all delay-[350ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[600px]:gap-2 max-[600px]:tracking-[2px] ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
               <span aria-hidden="true" className="flex items-center"><i className="block w-10 border-t border-brand-rust max-[600px]:w-6" /><i className="block h-2 w-2 rotate-45 border border-brand-rust" /></span>
-              <span>Patient Stories</span>
+              <span>What Doctors Say</span>
               <span aria-hidden="true" className="flex items-center"><i className="block h-2 w-2 rotate-45 border border-brand-rust" /><i className="block w-10 border-t border-brand-rust max-[600px]:w-6" /></span>
             </p>
             <h2
