@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const VIDEOS = [
-  { src: "/video-1.mp4", label: "Smile transformation" },
-  { src: "/video-2.mp4", label: "Patient experience" },
-  { src: "/video-3.mp4", label: "Specialist dental care" },
-  { src: "/video-4.mp4", label: "Inside Alpha Dental" },
-  { src: "/video-5.mp4", label: "Confident smiles" },
-  { src: "/video-6.mp4", label: "Care at RA Puram" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808906/video-1_qij18t.mp4", label: "Smile transformation" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808907/video-2_pbt5pj.mp4", label: "Patient experience" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808907/video-3_grd66c.mp4", label: "Specialist dental care" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808908/video-4_b3kccm.mp4", label: "Inside Alpha Dental" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808907/video-5_fao9ab.mp4", label: "Confident smiles" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808908/video-6_iwp7ja.mp4", label: "Care at RA Puram" },
 ] as const;
 
 export default function DentalVideoRow() {

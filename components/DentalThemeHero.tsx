@@ -208,7 +208,7 @@ export default function DentalThemeHero() {
               onPause={() => setVideoPaused(true)}
               onVolumeChange={(event) => setVideoMuted(event.currentTarget.muted)}
             >
-              <source src="/hero-1.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/jfmvvhot/video/upload/v1784808906/hero-1_p0ut1j.mp4" type="video/mp4" />
             </video>
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
             <button type="button" onClick={toggleVideoPlayback} aria-label={videoPaused ? "Play dental studio video" : "Pause dental studio video"} className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-[var(--color-brand-rust)] shadow-[0_10px_25px_rgba(0,0,0,.25)] transition hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">

@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const RESULTS = [
-  { src: "/before-1.jpeg", alt: "Composite veneering smile transformation before and after treatment" },
-  { src: "/before-2.jpeg", alt: "Alpha Dental Studio patient smile before and after treatment" },
-  { src: "/before-3.jpeg", alt: "Dental smile makeover before and after treatment" },
-  { src: "/before-4.webp", alt: "Patient dental transformation before and after treatment" },
+  { src: "https://res.cloudinary.com/jfmvvhot/image/upload/v1784808904/before-1_yaytuo.jpg", alt: "Composite veneering smile transformation before and after treatment" },
+  { src: "https://res.cloudinary.com/jfmvvhot/image/upload/v1784808904/before-2_b6et2b.jpg", alt: "Alpha Dental Studio patient smile before and after treatment" },
+  { src: "https://res.cloudinary.com/jfmvvhot/image/upload/v1784808905/before-3_evsrxi.jpg", alt: "Dental smile makeover before and after treatment" },
+  { src: "https://res.cloudinary.com/jfmvvhot/image/upload/v1784808904/before-4_cvzyum.webp", alt: "Patient dental transformation before and after treatment" },
 ] as const;
 
 export default function BeforeAfterCarousel() {

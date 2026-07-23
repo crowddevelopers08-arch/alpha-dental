@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const VIDEOS = [
-  { src: "/video-7.mp4", label: "Patient story" },
-  { src: "/video-8.mp4", label: "Treatment experience" },
-  { src: "/video-9.mp4", label: "Smile journey" },
-  { src: "/video-10.mp4", label: "Alpha Dental experience" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808908/video-7_zmqzhy.mp4", label: "Patient story" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808910/video-8_yhm7am.mp4", label: "Treatment experience" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808912/video-9_vx07z6.mp4", label: "Smile journey" },
+  { src: "https://res.cloudinary.com/jfmvvhot/video/upload/v1784808912/video-10_rezx96.mp4", label: "Alpha Dental experience" },
 ] as const;
 
 export default function PatientVideoCarousel() {
