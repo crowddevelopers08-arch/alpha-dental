@@ -5,13 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { openConsultationModal } from "./ConsultationModal";
 
-const NAV_LINKS = [
-  { href: "/#top", label: "Home" },
-  { href: "/#treatments", label: "Treatments" },
-  { href: "/#about", label: "About" },
-  { href: "/#reviews", label: "Reviews" },
-  { href: "/#contact", label: "Contact" },
-];
 
 export default function PageNavbar() {
   const [open, setOpen] = useState(false);
@@ -86,16 +79,6 @@ export default function PageNavbar() {
         id="primary-nav-panel"
         className={`${open ? "flex" : "hidden"} flex-col gap-1 border-t border-brand-rose/20 px-4 pb-4 pt-2 md:hidden`}
       >
-        {NAV_LINKS.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setOpen(false)}
-            className="rounded-lg px-2 py-2.5 text-[15px] font-semibold text-brand-ink hover:bg-brand-rose/10 hover:text-brand-rust"
-          >
-            {link.label}
-          </Link>
-        ))}
         <button
           type="button"
           onClick={() => {
