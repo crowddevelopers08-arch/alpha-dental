@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { openConsultationModal } from "./ConsultationModal";
 
 function CountUp({ end, suffix = "" }: { end: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -87,7 +88,32 @@ function TypewriterText() {
 
 export default function DentalThemeHero() {
   const heroRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [revealed, setRevealed] = useState(false);
+  const [videoPaused, setVideoPaused] = useState(false);
+  const [videoMuted, setVideoMuted] = useState(true);
+
+  async function toggleVideoPlayback() {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch {
+        setVideoPaused(true);
+      }
+    } else {
+      video.pause();
+    }
+  }
+
+  function toggleVideoSound() {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setVideoMuted(video.muted);
+  }
 
   useEffect(() => {
     const section = heroRef.current;
@@ -160,7 +186,7 @@ export default function DentalThemeHero() {
             ))}
           </div>
           <div className={`mt-6 flex items-center justify-center gap-[13px] whitespace-nowrap transition-all delay-[2450ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 min-[1101px]:justify-start max-[760px]:mt-5 max-[760px]:gap-[7px] ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
-            <a href="https://wa.me/+919363937900?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20consultation%20at%20RA%20Puram" target="_blank" rel="noopener noreferrer" className="inline-flex h-[62px] min-w-[285px] items-center justify-center rounded-full bg-[var(--color-brand-rust)] px-[25px] text-[16px] font-bold text-white no-underline shadow-[0_10px_30px_rgba(150,55,32,.18)] transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-brand-ink)] max-[760px]:h-[51px] max-[760px]:w-[46%] max-[760px]:min-w-0 max-[760px]:px-[7px] max-[760px]:text-[11px] max-[425px]:h-[48px] max-[425px]:text-[10px] max-[375px]:px-1 max-[375px]:text-[9px]"><span className="max-[375px]:hidden">Book My Free Consultation</span><span className="hidden max-[375px]:inline">Free Consultation</span></a>
+            <a rel="noopener noreferrer" onClick={() => openConsultationModal("Smile CTA Banner")} className="inline-flex h-[62px] min-w-[285px] items-center justify-center rounded-full bg-[var(--color-brand-rust)] px-[25px] text-[16px] font-bold text-white no-underline shadow-[0_10px_30px_rgba(150,55,32,.18)] transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-brand-ink)] max-[760px]:h-[51px] max-[760px]:w-[46%] max-[760px]:min-w-0 max-[760px]:px-[7px] max-[760px]:text-[11px] max-[425px]:h-[48px] max-[425px]:text-[10px] max-[375px]:px-1 max-[375px]:text-[9px]"><span className="max-[375px]:hidden">Book My Free Consultation</span><span className="hidden max-[375px]:inline">Free Consultation</span></a>
             <a href="tel:+919363937900" className="inline-flex h-[62px] min-w-[220px] items-center justify-center rounded-full border border-[rgba(190,148,133,.35)] bg-white px-[25px] text-[16px] font-bold text-[var(--color-brand-ink)] no-underline shadow-[0_10px_30px_rgba(150,55,32,.18)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#fbf3ef] max-[760px]:h-[51px] max-[760px]:w-[46%] max-[760px]:min-w-0 max-[760px]:px-[7px] max-[760px]:text-[11px] max-[425px]:h-[48px] max-[425px]:text-[10px] max-[375px]:px-1 max-[375px]:text-[9px]">Call +91 936 393 7900</a>
           </div>
         </div>
@@ -171,23 +197,34 @@ export default function DentalThemeHero() {
 
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[28px] shadow-[0_25px_60px_rgba(150,55,32,.25)] ring-1 ring-white/70">
             <video
+              ref={videoRef}
               className="h-full w-full object-cover object-center"
               autoPlay
               muted
               loop
               playsInline
               preload="metadata"
-              poster="/testmonial-bg.jpg"
+              onPlay={() => setVideoPaused(false)}
+              onPause={() => setVideoPaused(true)}
+              onVolumeChange={(event) => setVideoMuted(event.currentTarget.muted)}
             >
-              <source src="REPLACE_WITH_HERO_VIDEO_URL" type="video/mp4" />
+              <source src="/hero-1.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-            <span aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
-              <span className="absolute h-16 w-16 animate-ping rounded-full bg-white/40 motion-reduce:hidden" />
-              <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-[var(--color-brand-rust)] shadow-[0_10px_25px_rgba(0,0,0,.25)]">
-                <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-current"><path d="M8 5v14l11-7z" /></svg>
-              </span>
-            </span>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+            <button type="button" onClick={toggleVideoPlayback} aria-label={videoPaused ? "Play dental studio video" : "Pause dental studio video"} className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-[var(--color-brand-rust)] shadow-[0_10px_25px_rgba(0,0,0,.25)] transition hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+              {videoPaused ? (
+                <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-current" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z" /></svg>
+              )}
+            </button>
+            <button type="button" onClick={toggleVideoSound} aria-label={videoMuted ? "Unmute dental studio video" : "Mute dental studio video"} className="absolute right-4 bottom-4 flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white backdrop-blur-sm transition hover:scale-105 hover:bg-[var(--color-brand-rust)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              {videoMuted ? (
+                <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm11.5 3a3.5 3.5 0 0 0-1.5-2.87v5.74A3.5 3.5 0 0 0 15.5 12zm2.5 0c0 2.22-1.21 4.16-3 5.2v2.27A8.01 8.01 0 0 0 21 12a8.01 8.01 0 0 0-6-7.47V6.8c1.79 1.04 3 2.98 3 5.2z" /><path d="m3.3 2 18 18-1.3 1.3-18-18z" /></svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm11.5 3a3.5 3.5 0 0 0-1.5-2.87v5.74A3.5 3.5 0 0 0 15.5 12zm2.5 0c0 2.22-1.21 4.16-3 5.2v2.27A8.01 8.01 0 0 0 21 12a8.01 8.01 0 0 0-6-7.47V6.8c1.79 1.04 3 2.98 3 5.2z" /></svg>
+              )}
+            </button>
           </div>
 
           <div className="absolute -bottom-6 left-1/2 z-[2] flex -translate-x-1/2 items-center gap-2 rounded-full border border-[rgba(190,148,133,.35)] bg-white px-5 py-[10px] whitespace-nowrap shadow-[0_10px_30px_rgba(150,55,32,.18)] min-[1101px]:left-8 min-[1101px]:translate-x-0">

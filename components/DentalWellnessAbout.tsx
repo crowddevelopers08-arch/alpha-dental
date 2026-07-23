@@ -99,6 +99,7 @@ export default function DentalWellnessAbout() {
             className="inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-ink"
           >
             Book Your Consultation
+            <span aria-hidden="true" className="ml-3 h-2.5 w-2.5 rotate-45 border-t-2 border-r-2 border-current" />
           </button>
         </div>
         </div>
@@ -142,6 +143,7 @@ export default function DentalWellnessAbout() {
             className="inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-ink"
           >
             Book Your Consultation
+            <span aria-hidden="true" className="ml-3 h-2.5 w-2.5 rotate-45 border-t-2 border-r-2 border-current" />
           </button>
         </div>
       </div>
