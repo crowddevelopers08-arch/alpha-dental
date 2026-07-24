@@ -118,14 +118,15 @@ export default function BeforeAfterCarousel() {
                 cardRefs.current[index] = element;
               }}
               style={{ transitionDelay: `${1400 + index * 300}ms`, transitionDuration: "1200ms" }}
-              className={`relative aspect-[4/5] w-full shrink-0 snap-start overflow-hidden rounded-lg bg-white shadow-[0_12px_35px_rgba(58,46,41,.12)] ring-1 ring-brand-rose/15 transition-all ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:w-[44vw] sm:max-w-[360px] lg:w-[calc((100%_-_3rem)/4)] lg:max-w-none ${revealed ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+              className={`relative h-[115vw] w-full shrink-0 snap-start overflow-hidden rounded-lg bg-white opacity-0 shadow-[0_12px_35px_rgba(58,46,41,.12)] ring-1 ring-brand-rose/15 transition-opacity ease-out motion-reduce:opacity-100 sm:h-auto sm:aspect-[4/5] sm:w-[44vw] sm:max-w-[360px] sm:transition-all sm:motion-reduce:transform-none lg:w-[calc((100%_-_3rem)/4)] lg:max-w-none ${revealed ? "opacity-100 sm:translate-y-0" : "sm:translate-y-12"}`}
             >
               <Image
                 src={result.src}
                 alt={result.alt}
-                fill
+                width={1080}
+                height={1350}
                 sizes="(max-width: 639px) 92vw, (max-width: 1023px) 44vw, 25vw"
-                className="object-cover"
+                className="block h-full w-full object-cover"
               />
             </article>
           ))}

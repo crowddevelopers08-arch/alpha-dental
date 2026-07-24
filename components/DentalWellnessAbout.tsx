@@ -86,7 +86,7 @@ export default function DentalWellnessAbout() {
             Most dental visits leave you more <span className="text-[var(--color-brand-rust)]">confused than before.</span>
           </h2>
           <div className={`my-[24px] mb-[15px] max-w-[590px] text-[16px] leading-[1.7] text-[#6b5f58] transition-all delay-[2450ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[1250px]:text-[15px] max-[900px]:max-w-none max-[600px]:mt-[19px] max-[600px]:text-[14px] max-[600px]:leading-[1.65] ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
-            <p className="mb-[13px]">A rushed check-up. Medical jargon you don&apos;t understand. A number quoted on the spot — for a treatment that will sit in your mouth for the rest of your life.</p>
+            <p className="mb-[13px]">A rushed check-up. Medical jargon you don&apos;t understand. A number quoted on the spot for a treatment that will sit in your mouth for the rest of your life.</p>
             <p className="mb-[13px]">No real explanation. No comfort. No plan built around <em>you.</em></p>
           </div>
           <p className={`m-0 max-w-[590px] border-l-4 border-[var(--color-brand-rust)] bg-[#fbf3ef] px-[19px] py-4 text-[16px] leading-[1.5] font-bold text-[var(--color-brand-ink)] transition-all delay-[2800ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[600px]:px-[15px] max-[600px]:py-[14px] max-[600px]:text-[14px] ${revealed ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"}`}>

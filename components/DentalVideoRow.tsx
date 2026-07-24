@@ -107,13 +107,13 @@ export default function DentalVideoRow() {
                 cardRefs.current[index] = element;
               }}
               style={{ transitionDelay: `${1200 + index * 250}ms`, transitionDuration: "1200ms" }}
-              className={`group relative aspect-[9/16] w-full shrink-0 snap-start overflow-hidden rounded-lg bg-brand-ink transition-all ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:w-[220px] sm:max-w-[220px] lg:w-[calc((100%_-_5rem)/6)] lg:max-w-none ${revealed ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+              className={`group relative h-[163.556vw] w-full shrink-0 snap-start overflow-hidden rounded-lg bg-brand-ink opacity-0 transition-opacity ease-out motion-reduce:opacity-100 sm:h-auto sm:aspect-[9/16] sm:w-[220px] sm:max-w-[220px] sm:transition-all sm:motion-reduce:transform-none lg:w-[calc((100%_-_5rem)/6)] lg:max-w-none ${revealed ? "opacity-100 sm:translate-y-0" : "sm:translate-y-12"}`}
             >
               <video
                 ref={(element) => {
                   videoRefs.current[index] = element;
                 }}
-                className="h-full w-full object-cover"
+                className="block h-full w-full object-cover"
                 controls
                 muted
                 playsInline

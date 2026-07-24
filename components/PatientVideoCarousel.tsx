@@ -87,9 +87,6 @@ export default function PatientVideoCarousel() {
             >
               Experiences shared in their <span className="text-brand-rust">own words</span>
             </h2>
-            <p className={`mx-auto mt-3 max-w-xl text-sm leading-6 text-brand-ink/60 transition-all delay-[1050ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
-              Hear directly from patients cared for by our specialist team in RA Puram.
-            </p>
           </div>
 
           <div className={`absolute right-0 bottom-0 hidden shrink-0 gap-2 transition-all delay-[1200ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:flex ${revealed ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"}`}>
@@ -126,13 +123,13 @@ export default function PatientVideoCarousel() {
                 cardRefs.current[index] = element;
               }}
               style={{ transitionDelay: `${1400 + index * 300}ms`, transitionDuration: "1200ms" }}
-              className={`relative aspect-[9/16] w-full shrink-0 snap-start overflow-hidden rounded-lg bg-brand-ink shadow-[0_12px_35px_rgba(58,46,41,.15)] ring-1 ring-brand-rose/15 transition-all ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:w-[42vw] sm:max-w-[340px] lg:w-[calc((100%_-_3rem)/4)] lg:max-w-none ${revealed ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+              className={`relative h-[163.556vw] w-full shrink-0 snap-start overflow-hidden rounded-lg bg-brand-ink opacity-0 shadow-[0_12px_35px_rgba(58,46,41,.15)] ring-1 ring-brand-rose/15 transition-opacity ease-out motion-reduce:opacity-100 sm:h-auto sm:aspect-[9/16] sm:w-[42vw] sm:max-w-[340px] sm:transition-all sm:motion-reduce:transform-none lg:w-[calc((100%_-_3rem)/4)] lg:max-w-none ${revealed ? "opacity-100 sm:translate-y-0" : "sm:translate-y-12"}`}
             >
               <video
                 ref={(element) => {
                   videoRefs.current[index] = element;
                 }}
-                className="h-full w-full object-cover"
+                className="block h-full w-full object-cover"
                 controls
                 muted
                 playsInline
