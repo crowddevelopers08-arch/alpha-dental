@@ -129,7 +129,7 @@ export default function ClientTestimonialsSection() {
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <p className="mt-3 font-heading text-sm font-bold text-brand-ink">
-                  — {testimonial.name}
+                   {testimonial.name}
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function ClientTestimonialsSection() {
             onClick={() => openConsultationModal("Testimonials Consultation CTA")}
             className="inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-ink"
           >
-            Book Your Consultation
+            Book Free Consultation
           </button>
         </div>
       </div>

@@ -86,11 +86,11 @@ export default function DentalWellnessAbout() {
             Most dental visits leave you more <span className="text-[var(--color-brand-rust)]">confused than before.</span>
           </h2>
           <div className={`my-[24px] mb-[15px] max-w-[590px] text-[16px] leading-[1.7] text-[#6b5f58] transition-all delay-[2450ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[1250px]:text-[15px] max-[900px]:max-w-none max-[600px]:mt-[19px] max-[600px]:text-[14px] max-[600px]:leading-[1.65] ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
-            <p className="mb-[13px]">A rushed check-up. Medical jargon you don&apos;t understand. A number quoted on the spot for a treatment that will sit in your mouth for the rest of your life.</p>
+            <p className="mb-[13px]">A rushed check up. Medical jargon you don&apos;t understand. A number quoted on the spot for a treatment that will sit in your mouth for the rest of your life.</p>
             <p className="mb-[13px]">No real explanation. No comfort. No plan built around <em>you.</em></p>
           </div>
           <p className={`m-0 max-w-[590px] border-l-4 border-[var(--color-brand-rust)] bg-[#fbf3ef] px-[19px] py-4 text-[16px] leading-[1.5] font-bold text-[var(--color-brand-ink)] transition-all delay-[2800ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[600px]:px-[15px] max-[600px]:py-[14px] max-[600px]:text-[14px] ${revealed ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"}`}>
-            <em>That&apos;s not dentistry. That&apos;s guesswork — and your smile shouldn&apos;t be a guessing game.</em>
+            <em>That&apos;s not dentistry. That&apos;s guesswork and your smile shouldn&apos;t be a guessing game.</em>
           </p>
         <div className={`mt-3 flex flex-col items-left gap-4 transition-all delay-[3500ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[600px]:mt-8 sm:flex-row sm:justify-center ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
           <button
@@ -98,7 +98,7 @@ export default function DentalWellnessAbout() {
             onClick={() => openConsultationModal("Testimonials Consultation CTA")}
             className="inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-ink"
           >
-            Book Your Consultation
+            Book Free Consultation
             <span aria-hidden="true" className="ml-3 h-2.5 w-2.5 rotate-45 border-t-2 border-r-2 border-current" />
           </button>
         </div>
@@ -117,7 +117,7 @@ export default function DentalWellnessAbout() {
         </h2>
 
         <div className={`mt-[19px]  text-[14px] leading-[1.65] text-[#6b5f58] transition-all delay-[1050ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
-          <p className="mb-[13px] max-sm:mb-[5px]">A rushed check-up. Medical jargon you don&apos;t understand. A number quoted on the spot — for a treatment that will sit in your mouth for the rest of your life.</p>
+          <p className="mb-[13px] max-sm:mb-[5px]">A rushed check up. Medical jargon you don&apos;t understand. A number quoted on the spot for a treatment that will sit in your mouth for the rest of your life.</p>
           <p className="mb-0">No real explanation. No comfort. No plan built around <em>you.</em></p>
         </div>
 
@@ -134,7 +134,7 @@ export default function DentalWellnessAbout() {
         </div>
 
         <p className={`m-0 border-l-4 border-[var(--color-brand-rust)] bg-[#fbf3ef] px-[15px] py-[14px] text-[14px] leading-[1.5] font-bold transition-all delay-[2450ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"}`}>
-          <em>That&apos;s not dentistry. That&apos;s guesswork — and your smile shouldn&apos;t be a guessing game.</em>
+          <em>That&apos;s not dentistry. That&apos;s guesswork and your smile shouldn&apos;t be a guessing game.</em>
         </p>
         <div className={`mt-12 flex flex-col items-center gap-4 transition-all delay-[3500ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[600px]:mt-8 sm:flex-row sm:justify-center ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
           <button
@@ -142,7 +142,7 @@ export default function DentalWellnessAbout() {
             onClick={() => openConsultationModal("Testimonials Consultation CTA")}
             className="inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-ink"
           >
-            Book Your Consultation
+            Book Free Consultation
             <span aria-hidden="true" className="ml-3 h-2.5 w-2.5 rotate-45 border-t-2 border-r-2 border-current" />
           </button>
         </div>

@@ -58,7 +58,7 @@ export default function SiteFooter() {
           className={`mx-auto h-16 w-auto transition-all delay-[350ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 scale-100 opacity-100" : "translate-y-8 scale-90 opacity-0"}`}
         />
         <p className={`mt-4 font-heading text-lg font-bold text-brand-ink transition-all delay-700 duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
-          Alpha Dental Studio — RA Puram
+          Alpha Dental Studio RA Puram
         </p>
 
         <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 divide-y divide-brand-rose/25 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
@@ -93,7 +93,7 @@ export default function SiteFooter() {
 
           <div className={`px-6 py-6 transition-all delay-[1750ms] duration-[1200ms] ease-out last:pb-0 motion-reduce:transform-none motion-reduce:opacity-100 sm:py-0 ${revealed ? "translate-x-0 translate-y-0 opacity-100" : "translate-x-6 translate-y-8 opacity-0"}`}>
             <ClockIcon className="mx-auto h-6 w-6 text-brand-rust" />
-            <p className="mt-3 text-sm text-brand-ink/70">Mon – Sat: 10 AM – 8 PM</p>
+            <p className="mt-3 text-sm text-brand-ink/70">Mon – Sat: 10 AM 8 PM</p>
             <p className="text-sm text-brand-ink/70">Sunday: Closed</p>
           </div>
         </div>

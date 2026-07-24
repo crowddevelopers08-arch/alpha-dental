@@ -32,7 +32,7 @@ const TRUST_POINTS = [
   },
   {
     title: "Open 6 days a week",
-    description: "Mon–Sat, 10 AM – 8 PM. Easy to fit around your schedule, not the other way round.",
+    description: "Mon–Sat, 10 AM  8 PM. Easy to fit around your schedule, not the other way round.",
     icon: "/icon-11.png",
   },
 ];

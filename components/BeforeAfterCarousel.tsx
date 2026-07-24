@@ -16,19 +16,30 @@ export default function BeforeAfterCarousel() {
   const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
     const observer = new IntersectionObserver(([entry]) => {
+      setInView(entry.isIntersecting);
       if (entry.isIntersecting) {
         setRevealed(true);
-        observer.disconnect();
       }
-    }, { threshold: 0.12 });
+    }, { threshold: 0.25 });
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!inView) return;
+
+    const timer = window.setInterval(() => {
+      goTo((activeIndex + 1) % RESULTS.length);
+    }, 7000);
+
+    return () => window.clearInterval(timer);
+  }, [activeIndex, inView]);
 
   function goTo(index: number) {
     const nextIndex = Math.max(0, Math.min(index, RESULTS.length - 1));
@@ -80,7 +91,7 @@ export default function BeforeAfterCarousel() {
               Smiles transformed at <span className="text-brand-rust">Alpha</span>
             </h2>
             <p className={`mx-auto mt-3 max-w-xl text-sm leading-6 text-brand-ink/60 transition-all delay-[1050ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
-              Real before-and-after results from treatments at our RA Puram studio.
+              Real before and after results from treatments at our RA Puram studio.
             </p>
           </div>
 

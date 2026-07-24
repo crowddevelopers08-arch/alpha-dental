@@ -18,27 +18,44 @@ export default function DentalVideoRow() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
     const observer = new IntersectionObserver(([entry]) => {
+      setInView(entry.isIntersecting);
       if (entry.isIntersecting) {
         setRevealed(true);
-        observer.disconnect();
       }
-    }, { threshold: 0.12 });
+    }, { threshold: 0.25 });
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
-  function handlePlay(activeIndex: number) {
-    videoRefs.current.forEach((video, index) => {
-      if (video && index !== activeIndex && !video.paused) {
-        video.pause();
-      }
+  useEffect(() => {
+    if (!inView) {
+      videoRefs.current.forEach((video) => video?.pause());
+      return;
+    }
+
+    videoRefs.current.forEach((video) => {
+      if (!video) return;
+      void video.play().catch(() => {
+        // Playback may still require a tap when the browser is in a restricted mode.
+      });
     });
-  }
+  }, [inView]);
+
+  useEffect(() => {
+    if (!inView) return;
+
+    const timer = window.setInterval(() => {
+      goTo((activeIndex + 1) % VIDEOS.length);
+    }, 7000);
+
+    return () => window.clearInterval(timer);
+  }, [activeIndex, inView]);
 
   function goTo(index: number) {
     const nextIndex = Math.max(0, Math.min(index, VIDEOS.length - 1));
@@ -115,11 +132,11 @@ export default function DentalVideoRow() {
                 }}
                 className="block h-full w-full object-cover"
                 controls
+                loop
                 muted
                 playsInline
                 preload="metadata"
                 aria-label={video.label}
-                onPlay={() => handlePlay(index)}
               >
                 <source src={video.src} type="video/mp4" />
               </video>

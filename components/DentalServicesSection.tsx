@@ -16,7 +16,7 @@ const SERVICES = [
     tag: "Fixed · Permanent",
     title: "Full-Mouth Implants",
     description:
-      "Missing most or all your teeth? Get a complete, fixed set that looks, feels, and functions like your natural teeth — placed by consultant implantologists.",
+      "Missing most or all your teeth? Get a complete, fixed set that looks, feels, and functions like your natural teeth  placed by consultant implantologists.",
     image: "/hero/main-treatment.png",
     icon: "/icon-1.png",
   },
@@ -34,7 +34,7 @@ const SERVICES = [
     tag: "Invisalign Certified",
     title: "Invisible Aligners",
     description:
-      "Straighten your teeth without a single metal wire. Nearly invisible, removable, guided by certified Invisalign providers — fix your bite on your own time.",
+      "Straighten your teeth without a single metal wire. Nearly invisible, removable, guided by certified Invisalign providers fix your bite on your own time.",
     image: "/Invisible.webp",
     icon: "/icon-3.png",
   },
@@ -43,7 +43,7 @@ const SERVICES = [
     tag: "Crowns · Bridges · Implants",
     title: "Tooth Replacement",
     description:
-      "One tooth or several — crowns, bridges, or implants — replaced with solutions built to last, not band-aid fixes that fail in a year.",
+      "One tooth or several crowns, bridges, or implants replaced with solutions built to last, not band-aid fixes that fail in a year.",
     image: "/Tooth.jpg",
     icon: "/icon-4.png",
   },
@@ -52,7 +52,7 @@ const SERVICES = [
     tag: "Veneers · Whitening · Contouring",
     title: "Cosmetic Dentistry",
     description:
-      "Veneers, whitening, contouring — small refinements that make a disproportionately big difference in how confident you feel every time you smile.",
+      "Veneers, whitening, contouring small refinements that make a disproportionately big difference in how confident you feel every time you smile.",
     image: "/customatic.jpg",
     icon: "/icon-5.png",
   },
@@ -204,7 +204,7 @@ export default function DentalServicesSection() {
           onClick={() => openConsultationModal("Dental Services Consultation CTA")}
           className="inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-rust/20 transition-colors hover:bg-brand-ink"
         >
-          Book Your Consultation
+          Book Free Consultation
         </button>
       </div>
     </section>

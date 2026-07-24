@@ -58,12 +58,12 @@ export default function AlphaDifferenceSection() {
 
         <h2 className={`mt-6 font-heading text-3xl leading-tight font-bold tracking-[-1.5px] text-white transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:text-4xl lg:text-[52px] lg:leading-[1.1] lg:tracking-[-2px] ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
           Every treatment starts with a <span className="text-brand-rose">plan</span>
-          <br className="hidden sm:block" /> — not a <span className="text-brand-rust">drill</span>.
+          <br className="hidden sm:block" /> not a <span className="text-brand-rust">drill</span>.
         </h2>
 
         <p className={`mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 transition-all delay-[1750ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:text-lg ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
           We diagnose, explain, and design a treatment plan specific to your mouth,
-          your budget, and your goals — before we touch a single tooth. That&apos;s
+          your budget, and your goals before we touch a single tooth. That&apos;s
           why patients travel across Chennai just to sit in our RA Puram chair.
         </p>
       </div>

@@ -74,7 +74,7 @@ export default function SmileCtaBanner() {
           </h2>
           <p className={`mt-4 text-base text-brand-ink/60 transition-all delay-[3150ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[639px]:delay-[1050ms] sm:text-lg ${revealed ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>
             Book a free consultation at our RA Puram clinic. We&apos;ll assess your
-            smile and walk you through your options honestly — no pressure, no
+            smile and walk you through your options honestly no pressure, no
             obligation.
           </p>
           <button
@@ -82,13 +82,13 @@ export default function SmileCtaBanner() {
             onClick={() => openConsultationModal("Smile CTA Banner")}
             className={`mt-8 inline-flex h-14 items-center justify-center rounded-full bg-brand-rust px-8 text-xs font-bold uppercase tracking-wider text-white transition-all delay-[3500ms] duration-[1200ms] ease-out hover:-translate-y-0.5 hover:bg-brand-rust motion-reduce:transform-none motion-reduce:opacity-100 max-[639px]:delay-[1400ms] ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
           >
-            Book My Free Consultation →
+            Book Free Consultation →
           </button>
           <p className={`mt-4 text-sm font-semibold text-brand-ink/60 transition-all delay-[3850ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[639px]:delay-[1750ms] ${revealed ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>
             <Link href="tel:+919363937900" className="hover:text-brand-rust">
               +91 936 393 7900
             </Link>{" "}
-            · Mon–Sat, 10 AM – 8 PM
+            · Mon–Sat, 10 AM 8 PM
           </p>
         </div>
       </div>
