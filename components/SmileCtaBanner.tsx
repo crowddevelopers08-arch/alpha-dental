@@ -88,7 +88,7 @@ export default function SmileCtaBanner() {
             <Link href="tel:+919363937900" className="hover:text-brand-rust">
               +91 936 393 7900
             </Link>{" "}
-            · Mon–Sat, 10 AM 8 PM
+            · Mon–Sat, 10 AM - 8 PM
           </p>
         </div>
       </div>

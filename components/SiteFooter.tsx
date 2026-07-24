@@ -93,7 +93,7 @@ export default function SiteFooter() {
 
           <div className={`px-6 py-6 transition-all delay-[1750ms] duration-[1200ms] ease-out last:pb-0 motion-reduce:transform-none motion-reduce:opacity-100 sm:py-0 ${revealed ? "translate-x-0 translate-y-0 opacity-100" : "translate-x-6 translate-y-8 opacity-0"}`}>
             <ClockIcon className="mx-auto h-6 w-6 text-brand-rust" />
-            <p className="mt-3 text-sm text-brand-ink/70">Mon – Sat: 10 AM 8 PM</p>
+            <p className="mt-3 text-sm text-brand-ink/70">Mon – Sat: 10 AM - 8 PM</p>
             <p className="text-sm text-brand-ink/70">Sunday: Closed</p>
           </div>
         </div>
