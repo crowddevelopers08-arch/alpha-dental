@@ -62,11 +62,11 @@ export default function ThankYouPage() {
             </div>
 
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="https://wa.me/919363937900?text=Hi%2C%20I%20submitted%20a%20consultation%20request%20for%20Alpha%20Dental%20Studio." className="inline-flex h-13 min-w-[230px] items-center justify-center rounded-full bg-brand-rust px-7 text-sm font-bold text-white shadow-lg shadow-brand-rust/20 transition hover:-translate-y-0.5 hover:bg-brand-ink">
+              <a href="https://wa.me/918122200767?text=Hi%2C%20I%20submitted%20a%20consultation%20request%20for%20Alpha%20Dental%20Studio." className="inline-flex h-13 min-w-[230px] items-center justify-center rounded-full bg-brand-rust px-7 text-sm font-bold text-white shadow-lg shadow-brand-rust/20 transition hover:-translate-y-0.5 hover:bg-brand-ink">
                 Continue on WhatsApp →
               </a>
-              <a href="tel:+919363937900" className="inline-flex h-13 min-w-[210px] items-center justify-center rounded-full border border-brand-rose/40 bg-white px-7 text-sm font-bold transition hover:-translate-y-0.5 hover:border-brand-rust hover:text-brand-rust">
-                Call +91 936 393 7900
+              <a href="tel:+918122200767" className="inline-flex h-13 min-w-[210px] items-center justify-center rounded-full border border-brand-rose/40 bg-white px-7 text-sm font-bold transition hover:-translate-y-0.5 hover:border-brand-rust hover:text-brand-rust">
+                Call +91 8122200767
               </a>
             </div>
 

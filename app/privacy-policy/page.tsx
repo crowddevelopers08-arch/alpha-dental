@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
             <p className="text-xs font-bold uppercase tracking-[.2em] text-brand-rust">Need help?</p>
             <p className="mt-3 text-sm leading-6 text-brand-ink/60">Contact our RA Puram team with any privacy or patient-record question.</p>
             <a href="mailto:info@alphadentalstudios.com" className="mt-4 block break-all text-sm font-bold text-brand-rust hover:text-brand-ink">info@alphadentalstudios.com</a>
-            <a href="tel:+919363937900" className="mt-2 block text-sm font-bold text-brand-rust hover:text-brand-ink">+91 936 393 7900</a>
+            <a href="tel:+918122200767" className="mt-2 block text-sm font-bold text-brand-rust hover:text-brand-ink">+91 8122200767</a>
             <Link href="/" className="mt-5 inline-flex text-sm font-semibold text-brand-sage hover:text-brand-rust">← Back to home</Link>
           </div>
         </aside>

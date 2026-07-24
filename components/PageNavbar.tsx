@@ -41,10 +41,10 @@ export default function PageNavbar() {
 
         <div className="hidden items-center gap-5 md:flex">
           <a
-            href="tel:+919363937900"
+            href="tel:+918122200767"
             className="text-sm font-semibold text-brand-sage transition-colors hover:text-brand-rust"
           >
-            +91 936 393 7900
+            +91 8122200767
           </a>
           <button
             type="button"

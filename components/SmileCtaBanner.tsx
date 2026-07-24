@@ -85,8 +85,8 @@ export default function SmileCtaBanner() {
             Book Free Consultation →
           </button>
           <p className={`mt-4 text-sm font-semibold text-brand-ink/60 transition-all delay-[3850ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 max-[639px]:delay-[1750ms] ${revealed ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>
-            <Link href="tel:+919363937900" className="hover:text-brand-rust">
-              +91 936 393 7900
+            <Link href="tel:+918122200767" className="hover:text-brand-rust">
+              +91 8122200767
             </Link>{" "}
             · Mon–Sat, 10 AM - 8 PM
           </p>

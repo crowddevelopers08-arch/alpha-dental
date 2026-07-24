@@ -76,8 +76,8 @@ export default function SiteFooter() {
           <div className={`px-6 py-6 transition-all delay-[1400ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:py-0 ${revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
             <PhoneIcon className="mx-auto h-6 w-6 text-brand-rust" />
             <div className="mt-3 space-y-1 text-sm text-brand-ink/70">
-              <a href="tel:+919363937900" className="block transition-colors hover:text-brand-rust">
-                +91 936 393 7900
+              <a href="tel:+918122200767" className="block transition-colors hover:text-brand-rust">
+                +91 8122200767
               </a>
               <a href="tel:04435037900" className="block transition-colors hover:text-brand-rust">
                 044 3503 7900
