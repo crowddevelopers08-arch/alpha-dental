@@ -51,7 +51,7 @@ export default function SiteFooter() {
     <footer ref={footerRef} className="overflow-hidden bg-white">
       <div className="mx-auto max-w-5xl px-4 sm:py-8 max-sm:pt-0 max-sm:pb-5 text-center sm:px-6 lg:px-8">
         <Image
-          src="/logos.png"
+          src="/alpha-logo.jpeg"
           alt="Alpha Dental Studio"
           width={187}
           height={150}

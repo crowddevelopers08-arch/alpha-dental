@@ -17,7 +17,7 @@ export default function PageNavbar() {
       >
         <Link href="/" onClick={() => setOpen(false)} className="flex shrink-0 items-center">
           <Image
-            src="/logos.png"
+            src="/alpha-logo.jpeg"
             alt="Alpha Dental Studio"
             width={187}
             height={150}
