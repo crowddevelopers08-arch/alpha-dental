@@ -24,6 +24,8 @@ type SubmissionBody = {
   email: string;
   concern: string;
   pageUrl: string;
+  rating: string;
+  callback: string;
 };
 
 type TelecrmResponse = Record<string, unknown> & {
@@ -45,8 +47,12 @@ function normalizeSubmission(body: Record<string, unknown>): SubmissionBody {
     email: toText(body.email),
     concern: toText(body.concern),
     pageUrl: toText(body.pageUrl),
+    rating: toText(body.rating),
+    callback: toText(body.callback),
   };
 }
+
+const REVIEW_SOURCE = 'Review Page';
 
 function csvEscape(value: string): string {
   const safeValue = value.replace(/\r?\n/g, ' ');
@@ -108,6 +114,9 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
       pageUrl: body.pageUrl,
       url: body.pageUrl,
       telecrm: telecrmStatus,
+      rating: body.rating,
+      callback: body.callback,
+      isReview: body.source === REVIEW_SOURCE,
       headers: HEADERS,
       row,
     }),
