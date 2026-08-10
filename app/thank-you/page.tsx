@@ -23,6 +23,19 @@ const nextSteps = [
 export default function ThankYouPage() {
   return (
     <>
+      {/* Google Ads - Phone Call Conversion Tracking */}
+      <Script
+        id="google-ads-phone-conversion"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            gtag('config', 'AW-18329828984/ZFrhCPjAo98cEPj8q6RE', {
+              'phone_conversion_number': '081222 00767'
+            });
+          `,
+        }}
+      />
+
       {/* Meta Pixel - Submit Application */}
       <Script
         id="meta-pixel-submit-application"
