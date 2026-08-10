@@ -62,11 +62,13 @@ export default function RootLayout({
             __html: `
               (function(w,d,s,l,i){
                 w[l]=w[l]||[];
-                w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});
+                w[l].push({
+                  'gtm.start': new Date().getTime(),
+                  event:'gtm.js'
+                });
                 var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer'?'&l='+l:'';
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
                 j.async=true;
                 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
                 f.parentNode.insertBefore(j,f);
@@ -75,7 +77,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Analytics (GA4) */}
+        {/* Google Analytics GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VYRWP51RH4"
           strategy="afterInteractive"
@@ -134,7 +136,7 @@ export default function RootLayout({
 
       <body className="min-h-full flex flex-col font-sans">
 
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager noscript */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-T468K3PK"
@@ -147,7 +149,7 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* Meta Pixel (noscript) */}
+        {/* Meta Pixel noscript */}
         <noscript>
           <img
             height="1"
