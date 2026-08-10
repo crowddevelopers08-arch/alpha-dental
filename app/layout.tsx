@@ -77,7 +77,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Analytics GA4 */}
+        {/* Google Analytics GA4 / Google Tag */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VYRWP51RH4"
           strategy="afterInteractive"
@@ -89,9 +89,57 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
+
+              function gtag(){
+                dataLayer.push(arguments);
+              }
+
               gtag('js', new Date());
+
+              // Google Analytics
               gtag('config', 'G-VYRWP51RH4');
+
+              // Google Ads
+              gtag('config', 'AW-18329828984');
+            `,
+          }}
+        />
+
+        {/* Google Ads - Website Phone Call Conversion */}
+        <Script
+          id="google-ads-phone-conversion"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('config', 'AW-18329828984/i9DdCKiEkt8cEPj8q6RE', {
+                'phone_conversion_number': '081222 00767'
+              });
+            `,
+          }}
+        />
+
+        {/* Google Ads - Click To Call Conversion */}
+        <Script
+          id="google-ads-click-to-call"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18329828984/90f0CKuEkt8cEPj8q6RE',
+                  'value': 1.0,
+                  'currency': 'INR',
+                  'event_callback': callback
+                });
+
+                return false;
+              }
             `,
           }}
         />
@@ -110,14 +158,18 @@ export default function RootLayout({
                   n.callMethod.apply(n,arguments) :
                   n.queue.push(arguments)
                 };
+
                 if(!f._fbq)f._fbq=n;
+
                 n.push=n;
                 n.loaded=!0;
                 n.version='2.0';
                 n.queue=[];
+
                 t=b.createElement(e);
                 t.async=!0;
                 t.src=v;
+
                 s=b.getElementsByTagName(e)[0];
                 s.parentNode.insertBefore(t,s)
               }(
