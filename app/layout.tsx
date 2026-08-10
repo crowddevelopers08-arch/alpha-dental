@@ -66,9 +66,11 @@ export default function RootLayout({
                   'gtm.start': new Date().getTime(),
                   event:'gtm.js'
                 });
+
                 var f=d.getElementsByTagName(s)[0],
                     j=d.createElement(s),
                     dl=l!='dataLayer'?'&l='+l:'';
+
                 j.async=true;
                 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
                 f.parentNode.insertBefore(j,f);
@@ -77,29 +79,37 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Analytics GA4 / Google Tag */}
+        {/* Google Tag / GA4 */}
         <Script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-VYRWP51RH4"
           strategy="afterInteractive"
         />
 
         <Script
-          id="google-analytics"
+          id="google-tag"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
 
-              function gtag(){
+              function gtag() {
                 dataLayer.push(arguments);
               }
 
               gtag('js', new Date());
 
-              // Google Analytics
               gtag('config', 'G-VYRWP51RH4');
+            `,
+          }}
+        />
 
-              // Google Ads
+        {/* Google Ads */}
+        <Script
+          id="google-ads"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
               gtag('config', 'AW-18329828984');
             `,
           }}
@@ -126,7 +136,7 @@ export default function RootLayout({
             __html: `
               function gtag_report_conversion(url) {
                 var callback = function () {
-                  if (typeof(url) != 'undefined') {
+                  if (typeof(url) !== 'undefined') {
                     window.location = url;
                   }
                 };
@@ -153,6 +163,7 @@ export default function RootLayout({
               !function(f,b,e,v,n,t,s)
               {
                 if(f.fbq)return;
+
                 n=f.fbq=function(){
                   n.callMethod ?
                   n.callMethod.apply(n,arguments) :
@@ -187,7 +198,6 @@ export default function RootLayout({
       </head>
 
       <body className="min-h-full flex flex-col font-sans">
-
         {/* Google Tag Manager noscript */}
         <noscript>
           <iframe
