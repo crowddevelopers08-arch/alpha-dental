@@ -79,7 +79,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Tag / GA4 */}
+        {/* Google tag (gtag.js) - GA4 */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-VYRWP51RH4"
@@ -92,13 +92,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-
-              function gtag() {
-                dataLayer.push(arguments);
-              }
-
+              function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-
               gtag('config', 'G-VYRWP51RH4');
             `,
           }}
