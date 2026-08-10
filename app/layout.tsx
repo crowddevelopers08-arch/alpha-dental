@@ -110,13 +110,26 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Ads - Website Phone Call Conversion */}
+        {/* Google Ads - Website Phone Call Conversion (pyAzCJ2nk98cEPj8q6RE) */}
         <Script
-          id="google-ads-phone-conversion"
+          id="google-ads-phone-conversion-1"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               gtag('config', 'AW-18329828984/pyAzCJ2nk98cEPj8q6RE', {
+                'phone_conversion_number': '081222 00767'
+              });
+            `,
+          }}
+        />
+
+        {/* Google Ads - Website Phone Call Conversion (ZFrhCPjAo98cEPj8q6RE) */}
+        <Script
+          id="google-ads-phone-conversion-2"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('config', 'AW-18329828984/ZFrhCPjAo98cEPj8q6RE', {
                 'phone_conversion_number': '081222 00767'
               });
             `,
