@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en">
       <head>
         {/* Google Tag Manager */}
         <Script
@@ -62,10 +62,15 @@ export default function RootLayout({
             __html: `
               (function(w,d,s,l,i){
                 w[l]=w[l]||[];
-                w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});
+                w[l].push({
+                  'gtm.start': new Date().getTime(),
+                  event:'gtm.js'
+                });
+
                 var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
+
                 j.async=true;
                 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
                 f.parentNode.insertBefore(j,f);
@@ -74,14 +79,15 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Analytics (GA4) */}
+        {/* Google tag (gtag.js) - GA4 */}
         <Script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-VYRWP51RH4"
           strategy="afterInteractive"
         />
 
         <Script
-          id="google-analytics"
+          id="google-tag"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -92,10 +98,115 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Google Ads */}
+        <Script
+          id="google-ads"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('config', 'AW-18329828984');
+            `,
+          }}
+        />
+
+        {/* Google Ads - Website Phone Call Conversion (pyAzCJ2nk98cEPj8q6RE) */}
+        <Script
+          id="google-ads-phone-conversion-1"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('config', 'AW-18329828984/pyAzCJ2nk98cEPj8q6RE', {
+                'phone_conversion_number': '081222 00767'
+              });
+            `,
+          }}
+        />
+
+        {/* Google Ads - Website Phone Call Conversion (ZFrhCPjAo98cEPj8q6RE) */}
+        <Script
+          id="google-ads-phone-conversion-2"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('config', 'AW-18329828984/ZFrhCPjAo98cEPj8q6RE', {
+                'phone_conversion_number': '081222 00767'
+              });
+            `,
+          }}
+        />
+
+        {/* Google Ads - Click To Call Conversion */}
+        <Script
+          id="google-ads-click-to-call"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) !== 'undefined') {
+                    window.location = url;
+                  }
+                };
+
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18329828984/90f0CKuEkt8cEPj8q6RE',
+                  'value': 1.0,
+                  'currency': 'INR',
+                  'event_callback': callback
+                });
+
+                return false;
+              }
+            `,
+          }}
+        />
+
+        {/* Meta Pixel */}
+        <Script
+          id="meta-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {
+                if(f.fbq)return;
+
+                n=f.fbq=function(){
+                  n.callMethod ?
+                  n.callMethod.apply(n,arguments) :
+                  n.queue.push(arguments)
+                };
+
+                if(!f._fbq)f._fbq=n;
+
+                n.push=n;
+                n.loaded=!0;
+                n.version='2.0';
+                n.queue=[];
+
+                t=b.createElement(e);
+                t.async=!0;
+                t.src=v;
+
+                s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)
+              }(
+                window,
+                document,
+                'script',
+                'https://connect.facebook.net/en_US/fbevents.js'
+              );
+
+              fbq('init', '2220089875502538');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
       </head>
 
       <body className="min-h-full flex flex-col font-sans">
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager noscript */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-T468K3PK"
@@ -105,6 +216,17 @@ export default function RootLayout({
               display: "none",
               visibility: "hidden",
             }}
+          />
+        </noscript>
+
+        {/* Meta Pixel noscript */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=2220089875502538&ev=PageView&noscript=1"
+            alt=""
           />
         </noscript>
 
