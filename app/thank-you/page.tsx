@@ -106,7 +106,7 @@ export default function ThankYouPage() {
               </h1>
 
               <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-brand-ink/65 sm:text-lg">
-                Your free consultation request has reached our RA Puram team.
+                Your free consultation request has reached our RA Puram teams.
                 We&apos;ll contact you shortly to understand your concern and
                 arrange the right specialist consultation.
               </p>
