@@ -101,7 +101,7 @@ export default function SiteFooter() {
 
       <div className={`bg-brand-rust px-4 py-5 transition-all delay-[2100ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 sm:px-6 lg:px-8 ${revealed ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:gap-2">
-          <p className={`text-xs text-white/80 transition-all delay-[2450ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "-translate-x-5 opacity-0"}`}>© 2026 Alpha Dental Studio. All Rights Reserved.</p>
+          <p className={`text-xs text-white/80 transition-all delay-[2450ms] duration-[1200ms] ease-out motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-x-0 opacity-100" : "-translate-x-5 opacity-0"}`}>© {new Date().getFullYear()} Alpha Dental Studio. All Rights Reserved.</p>
           <Link
             href="/privacy-policy"
             className={`text-xs font-semibold text-white/80 underline-offset-2 transition-all delay-[2800ms] duration-[1200ms] ease-out hover:text-white hover:underline motion-reduce:transform-none motion-reduce:opacity-100 ${revealed ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}
